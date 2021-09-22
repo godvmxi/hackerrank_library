@@ -1,0 +1,1 @@
+dot tree3.dot |gvpr -c -f binarytree.gvpr  |neato -n -Tpng -o tree_new3.png
