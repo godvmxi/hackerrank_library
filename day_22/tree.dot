@@ -1,0 +1,16 @@
+graph g {
+    graph[ordering="out"];
+    A--B;
+    A--C;
+    B--D;
+    B--E;
+    C--F;
+    C--NULL[style="invis"];
+    A[shape="circle"];
+    B[shape="circle"];
+    C[shape="circle"];
+    D[shape="circle"];
+    E[shape="circle"];
+    F[shape="circle"];
+    NULL[style="invis"];
+}
