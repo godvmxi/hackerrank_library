@@ -1,27 +1,18 @@
 #include <iostream>
 #include <cstddef>
+#include "tree_node.h"
 
 using namespace std;
 
-class Node{
-    public:
-        int data;
-        Node *left;
-        Node *right;
-        Node(int d){
-            data = d;
-            left = NULL;
-            right = NULL;
-        }
-};
+
 class Solution{
     public:
-  		Node* insert(Node* root, int data) {
+  		TreeNode* insert(TreeNode* root, int data) {
             if(root == NULL) {
-                return new Node(data);
+                return new TreeNode(data);
             }
             else {
-                Node* cur;
+                TreeNode* cur;
                 if(data <= root->data){
                     cur = insert(root->left, data);
                     root->left = cur;
@@ -35,21 +26,21 @@ class Solution{
            }
         }
 
-		int maxHeight(Node* node){
+		int maxHeight(TreeNode* TreeNode){
           //Write your code here
-            if (node == NULL)
+            if (TreeNode == NULL)
             {
                 return 0;
             }
-            int left_height = maxHeight(node->left);
-            int right_height = maxHeight(node->right);
+            int left_height = maxHeight(TreeNode->left);
+            int right_height = maxHeight(TreeNode->right);
             int result =  left_height >  right_height ? left_height + 1: right_height + 1;
             //cout << "result -> " << result  << " left: "<< left_height << " right: "<< right_height<<endl;
             return result;
         }
-        int getHeight(Node* node){
+        int getHeight(TreeNode* TreeNode){
            //Write your code here
-            int result = maxHeight(node);
+            int result = maxHeight(TreeNode);
             if(result > 0)
                 result--;
             return result;
@@ -59,7 +50,7 @@ class Solution{
 
 int main() {
     Solution myTree;
-    Node* root = NULL;
+    TreeNode* root = NULL;
     int t;
     int data;
 
@@ -70,7 +61,15 @@ int main() {
         root = myTree.insert(root, data);
     }
     int height = myTree.getHeight(root);
-    cout << height;
+    cout << "tree height-> " << height << endl;
+    
+    cout << "level order traversal : " << endl;
+    levelOrder(root);
+    cout << endl;
+    cout << "Tree Node dot : " << endl;
+    string dot_string = levelOrderPrintToDot(root);
+    cout << dot_string << endl;
+
 
     return 0;
 }
