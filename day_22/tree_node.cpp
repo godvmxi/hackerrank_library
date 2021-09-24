@@ -5,7 +5,7 @@
 #include <random>
 #include <sstream>
 using namespace std;
-void levelOrder(TreeNode *root)
+void levelOrderTraversal(TreeNode *root)
 {
     std::queue<TreeNode*> q;
     if(root != nullptr)
@@ -51,9 +51,6 @@ digraph G {
     13 -> 12;
     16 -> 15;
     16 -> 17;
-
-
-
 */
 std::string levelOrderPrintToDot(TreeNode *root)
 {

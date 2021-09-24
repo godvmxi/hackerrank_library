@@ -64,7 +64,7 @@ int main() {
     cout << "tree height-> " << height << endl;
     
     cout << "level order traversal : " << endl;
-    levelOrder(root);
+    levelOrderTraversal(root);
     cout << endl;
     cout << "Tree Node dot : " << endl;
     string dot_string = levelOrderPrintToDot(root);

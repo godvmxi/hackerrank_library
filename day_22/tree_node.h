@@ -12,7 +12,7 @@ class TreeNode{
             right = nullptr;
         }
 };
-void levelOrder(TreeNode *root);
+void levelOrderTraversal(TreeNode *root);
 std::string levelOrderPrintToDot(TreeNode *root);
 
 
